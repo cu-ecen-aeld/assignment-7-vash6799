@@ -5,8 +5,9 @@
 # This conditional selects whether we are being included from the
 # kernel Makefile or not.
 
-LDDINC=$(PWD)/../include
+# Add ldd3 include/ directory for proc_ops_version.h and others
 EXTRA_CFLAGS += -I$(src)/../include
+ccflags-y    += -I$(src)/../include
 
 ifeq ($(KERNELRELEASE),)
 
